@@ -1,0 +1,22 @@
+name: webapp-infnet-studies-mngmt-ricardo-jnunes
+services:
+  app:
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: "webapp-infnet-studies-mngmt"
+    stdin_open: true
+    ports:
+      - 3000:3000
+  database:
+    image: mysql:latest
+    container_name: "infnet-studies-mngmt-db"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: infnet-studies-mngmt-db
+      MYSQL_USER: myuser
+      MYSQL_PASSWORD: mypassword
+    ports:
+      - "3306:3306"
