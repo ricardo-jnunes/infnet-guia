@@ -6,7 +6,12 @@ Essa é uma aplicação para gerenciar seus estudos no Infnet - Guia de Estudos.
 ## Getting Started
 Estudo de caso com Docker Swarm para a máteria Integração Contínua, DevOps e Computação em Nuvem.
 
-### Docker
+
+## Best Practices
+
+Informações de boas práticas do uso de Node.js e Docker pode ser encontrado aqui [Node.js Best Practices](https://github.com/nodejs/docker-node/blob/main/docs/BestPractices.md).
+
+## Docker
 
 A aplicação é executada com Docker:
 ```
@@ -15,7 +20,7 @@ docker-compose up
 
 ```
 
-#### Docker Swarm
+### Docker Swarm
 
 Usando o docker-compose.yam para definir os serviços e réplicas em YAML para Swarm.
 

@@ -1,4 +1,3 @@
-name: webapp-infnet-studies-mngmt-ricardo-jnunes
 services:
   app:
     restart: always
@@ -6,7 +5,13 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: "webapp-infnet-studies-mngmt"
-    stdin_open: true
+    #deploy:
+    #  replicas: 34
+    #  update_config:
+    #    parallelism: 2
+    #    delay: 10s
+    #  restart_policy:
+    #    condition: on-failure
     ports:
       - 3000:3000
   database:
@@ -20,3 +25,7 @@ services:
       MYSQL_PASSWORD: mypassword
     ports:
       - "3306:3306"
+
+networks:
+  infnet-network:
+    driver: overlay
