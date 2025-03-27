@@ -1,10 +1,10 @@
 services:
   app:
-    restart: always
     build:
       context: .
       dockerfile: Dockerfile
     container_name: "webapp-infnet-studies-mngmt"
+    restart: always
     #deploy:
     #  replicas: 34
     #  update_config:
@@ -14,6 +14,8 @@ services:
     #    condition: on-failure
     ports:
       - 3000:3000
+    networks:
+    - infnet-network
   database:
     image: mysql:latest
     container_name: "infnet-studies-mngmt-db"
@@ -25,7 +27,9 @@ services:
       MYSQL_PASSWORD: mypassword
     ports:
       - "3306:3306"
-
+    networks:
+          - infnet-network
 networks:
   infnet-network:
-    driver: overlay
+    driver: bridge
+    #driver: overlay
