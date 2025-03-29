@@ -15,9 +15,8 @@ Informações de boas práticas do uso de Node.js e Docker pode ser encontrado a
 
 A aplicação é executada com Docker:
 ```
-# Comando se pretende rodar buildar e executar a aplicação
+# Comando se pretende rodar o build e executar a aplicação
 docker-compose up
-
 ```
 
 ### Docker Swarm
