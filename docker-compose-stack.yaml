@@ -31,6 +31,8 @@ services:
       MYSQL_PASSWORD: mypassword
     expose:
       - 3306 #Only accessible by services in the same network
+    volumes:
+      - /mnt/data/mysql_data:/var/lib/mysql
     networks:
       - infnet-network
   cadvisor:
@@ -41,6 +43,11 @@ services:
           condition: on-failure
     expose:
       - 8080 #Only accessible by services in the same network
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:rw
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
     networks:
       - infnet-network
   prometheus:
@@ -56,7 +63,8 @@ services:
     expose:
       - 9090 #Only accessible by services in the same network
     volumes:
-      - ./prometheus:/etc/prometheus
+      - ./prometheus/:/etc/prometheus/
+      - /mnt/data/prometheus_data:/prometheus
     networks:
       - infnet-network
   grafana:
@@ -72,6 +80,7 @@ services:
       - GF_SECURITY_ADMIN_PASSWORD=grafana
     volumes:
       - ./grafana:/etc/grafana/provisioning/datasources
+      - /mnt/data/grafana_data:/var/lib/grafana
     networks:
       - infnet-network
 networks:
