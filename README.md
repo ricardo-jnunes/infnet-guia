@@ -22,8 +22,8 @@ docker-compose up
 
 ### Docker Swarm
 
-Usando o docker-compose.yam para definir os serviços e réplicas em YAML para Swarm.
+Usando o docker-compose-stack.yml para definir os serviços e réplicas em YAML para Swarm.
 
 ```
-docker stack deploy -c docker-compose.yml infnet-studies-mngmt-stack
+docker stack deploy -c docker-compose-stack.yml infnet-studies-stack
 ```
