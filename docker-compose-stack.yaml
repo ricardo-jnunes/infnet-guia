@@ -39,8 +39,8 @@ services:
       mode: global
       restart_policy:
           condition: on-failure
-    expose:
-      - 8080 #Only accessible by services in the same network
+    ports:
+      - 8080:8080
     volumes:
       - /:/rootfs:ro
       - /var/run:/var/run:rw
