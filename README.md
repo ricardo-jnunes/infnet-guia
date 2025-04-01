@@ -24,5 +24,46 @@ docker-compose up
 Usando o docker-compose-stack.yml para definir os serviços e réplicas em YAML para Swarm.
 
 ```
-docker stack deploy -c docker-compose-stack.yml infnet-studies-stack
+docker stack deploy -c docker-compose-stack.yaml infnet-guide-stack # Deploy Stack
+
+docker stack rm infnet-guide-stack # Apagar Stack
+```
+#### Docker Swarm Commands
+
+Comandos para os EC2
+```
+1  sudo yum install Docker
+2  sudo yum install docker
+3  sudo service docker start
+4  docker ps
+5  sudo usermod -a -G docker ec2-user
+6  sudo service docker start
+```
+
+Comandos para o Manager
+```
+docker node ls # Lista os nós configurados
+docker swarm join-token [OPTIONS] (worker|manager) # Solicitar token para inserir novos nós/nodes
+
+# Ver os serviços
+docker stack services infnet-guide-stack
+
+# Logs dos serviços
+docker service logs infnet-guide-stack_grafana
+```
+
+#### AWS - Montando um Volume
+```
+sudo mkfs -t xfs /dev/sdf
+sudo mkdir /mnt/data
+sudo mount /dev/sdf /mnt/data
+
+# Dar permissão ao usuário
+sudo chgrp -R ec2-user /mnt/data 
+sudo chown -R ec2-user:ec2-user /mnt/data/
+
+# Crie os diretórios necessários
+mkdir /mnt/data/prometheus_data
+mkdir /mnt/data/grafana_data
+mkdir /mnt/data/mysql_data
 ```
