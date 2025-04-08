@@ -12,7 +12,7 @@ Informações, documentação e evidências da execução deste projeto podem se
 
 ## Best Practices
 
-Informações de boas práticas do uso de Node.js e Docker podem ser encontrado aqui [PROJETO DA DISCIPLINA - RICARDO JOSÉ NUNES - Integração Contínua, DevOps e Computação em Nuvem](https://github.com/ricardo-jnunes/infnet-guia/blob/main/docs/Ricardo_José_Nunes_Integração_Contínua_DevOps_e _Computação_em_Nuvem_pd.pdf).
+Informações de boas práticas do uso de Node.js e Docker podem ser encontrado aqui [PROJETO DA DISCIPLINA - RICARDO JOSÉ NUNES - Integração Contínua, DevOps e Computação em Nuvem](https://github.com/ricardo-jnunes/infnet-guia/blob/main/docs/Ricardo_José_Nunes_Integração_Contínua_DevOps_e_Computação_em_Nuvem_pd.pdf).
 
 ## Docker
 
